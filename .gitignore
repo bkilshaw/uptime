@@ -35,3 +35,8 @@ uptime-*.tar
 npm-debug.log
 /assets/node_modules/
 
+# Secret stuff
+.env*
+.env*.*
+!.env*.example
+/config/*.secret.exs
