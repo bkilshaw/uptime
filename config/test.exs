@@ -34,3 +34,10 @@ config :logger, level: :warning
 
 # Initialize plugs at runtime for faster test compilation
 config :phoenix, :plug_init_mode, :runtime
+
+# ------------------------------------------------------------------------------
+# ...secret coinfig...
+# ------------------------------------------------------------------------------
+if File.exists?("config/test.secret.exs") do
+  import_config "test.secret.exs"
+end
