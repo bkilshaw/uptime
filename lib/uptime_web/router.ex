@@ -66,6 +66,14 @@ defmodule UptimeWeb.Router do
 
     live_session :require_authenticated_user,
       on_mount: [{UptimeWeb.UserAuth, :ensure_authenticated}] do
+
+      live "/sites", SiteLive.Index, :index
+      live "/sites/new", SiteLive.Index, :new
+      live "/sites/:id/edit", SiteLive.Index, :edit
+
+      live "/sites/:id", SiteLive.Show, :show
+      live "/sites/:id/show/edit", SiteLive.Show, :edit
+
       live "/users/settings", UserSettingsLive, :edit
       live "/users/settings/confirm_email/:token", UserSettingsLive, :confirm_email
     end
